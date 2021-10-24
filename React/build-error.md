@@ -1,0 +1,4 @@
+1. build 시 빈 화면만 출력되는 오류
+
+- index.html 내의 css, js 경로의 /static을 ./static으로 수정을 통해 해결
+- build시에 ./static으로 build되게 하는 방법 찾기
