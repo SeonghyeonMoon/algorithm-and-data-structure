@@ -13,3 +13,13 @@
 5. Component 반복 사용시 state 따로 관리
 
 6. Props = Properties
+
+## Naming
+
+1. nextObject
+
+## Array
+
+1. 추가 - concat
+2. 삭제 - filter
+3. 업데이트 - map

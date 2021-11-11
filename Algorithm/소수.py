@@ -1,5 +1,6 @@
 # 소수 판별(에라토스테네스의 체)
 
+
 def get_prime_number(n):
     ck = [False] * 2 + [True for i in range(n - 1)]
     for i in range(2, int((n + 1) ** 0.5) + 1):
@@ -7,6 +8,3 @@ def get_prime_number(n):
             for j in range(i * i, n + 1, i):
                 ck[j] = False
     return ck
-
-
-print(get_prime_number(16))
