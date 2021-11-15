@@ -6,7 +6,7 @@ render의 결과물을 브라우저에 실제로 반영하기 직전에 호출
 
 ```js
 getSnapshotBeforeUpdate(prevProps, prevState) {
-  if(prevState.array !=== this.state.array) {
+  if(prevState.array !== this.state.array) {
     const {scrollTop, scrollHeight} = this.list
     return {scrollTop, scrollHeight}
   }

@@ -7,6 +7,6 @@ false 반환하면 여기서 업데이트 중지
 
 ```js
 shouldComponentUpdate(nextProps, nextState) {
-  return nextState.number % 10 !=== 4;
+  return nextState.number % 10 !== 4;
 }
 ```
