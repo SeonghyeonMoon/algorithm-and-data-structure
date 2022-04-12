@@ -1,5 +1,7 @@
 # useEffect
 
+렌더링 발생할 때마다 실행하고 싶지 않을 때
+
 ```js
 useEffect(() => {
   console.log('effect') // 마운트, 업데이트 시 실행
