@@ -4,7 +4,6 @@ import heapq
 sys.stdin = open("input.txt", "r")
 input = sys.stdin.readline
 
-
 def binary_search(target, start, end, arr):
     if start > end:
         return end
@@ -17,7 +16,6 @@ def binary_search(target, start, end, arr):
         end = mid - 1
     return binary_search(target, start, end)
 
-V
 k, n = map(int, input().split())
 arr = []
 for _ in range(k):
