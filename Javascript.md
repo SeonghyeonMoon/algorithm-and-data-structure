@@ -1,6 +1,6 @@
 # Javascript Method
 
-## array
+## Array Method
 
 1. arr.splice(i, n) - i번째부터 n개 삭제
 
@@ -14,22 +14,6 @@
 5. arr.reduce((prev, curr) => {
    curr, 시작값
    })
-
-## 연속 숫자 배열 만들기
-
-```js
-const my_name = 'mean0';
-const my_name_array = Array.from(my_name);
-const num_array = Array.from(my_name, (item, index) => {
-  return index;
-});
-```
-
-```js
-const new_array = Array.from({ length: 4 }, (item, index) => {
-  return index;
-});
-```
 
 ## JSON
 
