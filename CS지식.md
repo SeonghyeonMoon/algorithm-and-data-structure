@@ -1,3 +1,5 @@
+# 웹 질문
+
 1. 호이스팅이란 무엇인가요?  
    var 변수 선언과, 함수 선언문에서 발생하며, 함수 안에 있는 선언들을 끌어올려서 함수의 유효 범위의 최상단에 선언하는 것
 
@@ -24,4 +26,14 @@
 
 9. DOM이란 무엇인가요?
 
-10. 자바스크립터
+# 용어 정리
+
+1. SEO - Search Engine Optimization
+
+2. HTTP - HyperText Transfer Protocol - Client-Server 통신 프로토콜
+
+3. RESTAPI - POST = Create, PUT = Update, PATCH = UPDATE(일부 수정)
+
+4. MVC - Model(Data 관련), View(시각화), Controller(M V 연결, 전반적 제어)
+
+5. ASCII - American Standard Code for Information Interchange 최초의 표준 문자열 인코딩 방식
