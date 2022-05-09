@@ -1,8 +1,9 @@
+# [백준][ac](https://www.acmicpc.net/problem/5430)
+
+```py
 from collections import deque
 import sys
-sys.stdin = open('input.txt')
 input = sys.stdin.readline
-
 
 def solution():
     p = input().rstrip()
@@ -29,3 +30,4 @@ def solution():
 T = int(input())
 for _ in range(T):
     print(solution())
+```
