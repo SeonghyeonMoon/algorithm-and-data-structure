@@ -26,6 +26,11 @@
 
 9. DOM이란 무엇인가요?
 
+10. Https란 HyperText Transfer Protocol Secure의 Http에 보안을 추가함으로서 데이터의 무결성과 기밀성을 유지해주는 프로토콜
+
+11. CloudFront란 
+엣지 로케이션, 
+
 # 용어 정리
 
 1. SEO - Search Engine Optimization
