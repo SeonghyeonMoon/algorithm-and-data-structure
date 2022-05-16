@@ -11,6 +11,7 @@
 4. arr.find/filter/map/some((value(, idx)(, arr)) => {
    조건
    })
+   
 5. arr.reduce((prev, curr) => {
    curr, 시작값
    })

@@ -1,4 +1,4 @@
-from collections import deque
+from collections import defaultdict, deque
 from math import ceil, floor
 import sys
 from tkinter import N
@@ -7,16 +7,30 @@ from typing import Counter
 input = sys.stdin.readline
 
 
-
-def solution(A, F, M):
-    expected_sum = (len(A) + F) * M
-    needed_sum = expected_sum - sum(A)
-    if needed_sum > F * 6 or needed_sum < F * 1:
-        return [0]
-    if needed_sum % F:
-        return [needed_sum % F + needed_sum // F] + [needed_sum // F for _ in range(F - 1)]
-    return [needed_sum // F for _ in range(F)]
+replies = ["FFCCAAFCCAAA", "AAAABBBBCCCC", "ABCABCABCABC"]
+n = 4
+k = 2
 
 
+def solution2(reply):
+    for length in range(n, len(reply) // 2 + 1):
+        for index in range(len(reply) - length + 1):
+            temp = reply[index:index + length]
+            l, r = index + length, index + length * 2
+            answer = 1
+            while r < len(reply) + 1:
+                if reply[l:r] == temp:
+                    answer += 1
+                    l += length
+                    r += length
+                else:
+                    break
+            if answer >= k:
+                return 0
+    return 1
 
-print(solution([1, 5, 6], 4, 3))
+result = []
+for reply in replies:
+    result.append(solution2(reply))
+
+print(result)
