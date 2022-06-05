@@ -53,6 +53,50 @@ props가 변경되었을 때만 컴포넌트 리렌더링
 export default React.memo(컴포넌트명); // props가 변경될 때만 리렌더링
 ```
 
+## useReducer
+
+상태 업데이트 로직을 컴포넌트 밖으로 분리 가능
+리듀서로 로직을 분리했으니 다른곳에서도 쉽게 재사용을 할 수 있다
+useState 의 setState 함수를 여러번 사용하지 않아도 된다
+
+```js
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'ACTION NAME':
+      return state + 1;
+    case 'ANOTHER NAME':
+      return state - 1;
+    default:
+      // throw new Error('Unhandled action');
+      return state
+  }
+}
+
+const [state, dispatch] = useReducer(reducer, initialState)
+const eventName = () => {
+  dispatch({
+    type: 'ACTION NAME';
+  })
+}
+```
+
+## useState
+
+setState는 비동기로 작동해서 예상과 다르게 작동할 때가 있다. 그럴 때 두번 째 인수로 callback함수를 받아 setState가 끝나고 실행시킬 수 있었다.
+그러나 hook에서는 그 기능이 사라졌고, 공식문서에 따르면 setState가 끝나고 실행하려면 useEffect를 사용하기를 권장한다고 적혀있다.
+
+또한 연속적으로 setState를 실행하려면 update 함수가 필요하다.
+
+```js
+setState(state + 1);
+setState(state + 1);
+// (X)
+
+setState(prevState => prevState + 1);
+setState(prevState => prevState + 1);
+// (O)
+```
+
 ## 적용해 볼 것
 
 1. 배열 추가할 때 spread 연산자 대신 concat 사용해보기

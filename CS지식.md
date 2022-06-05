@@ -58,9 +58,9 @@ div.addEventListener('click', event, {
 ### 이벤트 전파 방지
 
 ```js
-const event = (e) => {
-   e.stopPropagation();
-}
+const event = e => {
+  e.stopPropagation();
+};
 ```
 
 ## 제어 컴포넌트, 비제어 컴포넌트
@@ -69,16 +69,14 @@ const event = (e) => {
 
 사용자 인증에 대한 정보를 유지한다.
 
-
 ## JWT
 
 Header, Payload, Signature
 
 ### Header
+
 typ 토큰의 타입
 alg 알고리즘 방식
-
-
 
 2. 클로저란 무엇인가요?  
    클로저 안에 정의된 함수는 만들어진 환경을 기억한다.
@@ -131,3 +129,12 @@ alg 알고리즘 방식
 ## Context API의 문제점
 
 provider로 감싼 모든 자식 컴포넌트들이 리렌더링되는 문제점이 있는데 이를 해결하기 위해서는 Provider Hell이 발생한다.
+
+## HLS
+
+HTTP Live Streaming
+파일 조각을 나누고 http 통신으로 전송하는 방식
+
+## 주소창에 주소를 입력했을 때 일어나는 일
+
+주소창에 도메인 네임을 입력하면 DNS 서버에서 해당 IP를 찾아 요청을 하고, HTTP와 TCP를 통해 해당 웹 서버에서 자원을 사용자에게 전송해줍니다. 해당 자원을 DOM, CSSOM 등으로 파싱하여 렌더 트리를 생성하고 화면에 보여줍니다. 후에 Javascript가 렌더 트리에 영향을 주면 리플로팅 및 리페인팅 과정을 통해 화면을 재구성합니다.

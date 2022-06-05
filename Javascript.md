@@ -141,3 +141,8 @@ async function makePromise() {
   }
 }
 ```
+
+## Truthy/Falsy
+
+Falsy의 예시 - undefined, null, 0, '', NaN, false  
+Truthy의 예시 - Falsy를 제외한 모든 값, 특히 [], {} 주의
