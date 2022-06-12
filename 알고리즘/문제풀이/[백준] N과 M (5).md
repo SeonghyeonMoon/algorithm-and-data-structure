@@ -1,8 +1,6 @@
-import sys
+# [백준] [N과 M (5)](https://www.acmicpc.net/problem/15654)
 
-sys.stdin = open("input.txt")
-input = sys.stdin.readline
-
+```py
 N, M = map(int, input().split())
 numbers = sorted(list(map(int, input().split())))
 
@@ -18,3 +16,4 @@ def solution(now):
 
 
 solution([])
+```

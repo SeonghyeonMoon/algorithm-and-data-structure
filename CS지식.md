@@ -42,6 +42,9 @@ var의 경우 호이스팅시 undefined로 변수를 초기화한다.
 
 ## 제어 컴포넌트, 비제어 컴포넌트
 
+## this 
+ 언제나 상위 스코프의 this
+
 ## 쿠키, 세션, JWT
 
 사용자 인증에 대한 정보를 유지한다.
@@ -55,23 +58,33 @@ Header, Payload, Signature
 typ 토큰의 타입
 alg 알고리즘 방식
 
-2. 클로저란 무엇인가요?  
-   클로저 안에 정의된 함수는 만들어진 환경을 기억한다.
+## 클로저 
 
-3. 쿠키, 세션, 캐시란 무엇인가요?
+클로저는 반환된 내부함수가 자신이 선언됐을 때의 환경(Lexical environment)인 스코프를 기억하여 자신이 선언됐을 때의 환경(스코프) 밖에서 호출되어도 그 환경(스코프)에 접근할 수 있는 함수
 
-4. RESTAPI란 무엇인가요?
-   Representational State Transfer
-   자원을 이름으로 구분하여 해당 자원의 상태(정보)를 주고 받는 모든 것
+## 라이프 사이클
 
-5. 명령형, 선언형 프로그래밍의 차이는 무엇인가요?
+마운트, 업데이트, 언마운트
 
-6. 추상화란 무엇인가요?
+Constructor
+Props > state
+update should?
+render
+didMount/update
+unmount
 
-8. 브라우저의 역할은 무엇인가요?
-   브라우저의 주요 기능은 사용자가 선택한 자원을 서버에 요청하고 브라우저에 표시하는 것. 자원은 HTML문서지만 PDF나 이미지같은 형태일 수 있다.
 
-10. Https란 HyperText Transfer Protocol Secure의 Http에 보안을 추가함으로서 데이터의 무결성과 기밀성을 유지해주는 프로토콜
+## RESTAPI 정의
+
+Representational State Transfer
+자원을 이름으로 구분하여 해당 자원의 상태(정보)를 주고 받는 모든 것
+
+## 브라우저의 역할
+
+브라우저의 주요 기능은 사용자가 선택한 자원을 서버에 요청하고 브라우저에 표시하는 것. 자원은 HTML문서지만 PDF나 이미지같은 형태일 수 있다.
+
+## Https
+HyperText Transfer Protocol Secure의 Http에 보안을 추가함으로서 데이터의 무결성과 기밀성을 유지해주는 프로토콜
 
 11. CloudFront란
     엣지 로케이션,
