@@ -16,6 +16,7 @@
 
 6. git branch branch_name
 브랜치 생성
+
 ### fetch
 
 단순히 원격 저장소의 내용을 확인하고 병합은 하고 싶지 않은 경우
