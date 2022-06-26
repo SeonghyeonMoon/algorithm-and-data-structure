@@ -3,14 +3,31 @@ import sys
 sys.stdin = open("input.txt")
 input = sys.stdin.readline
 
-h, m = map(int, input().split())
-m += int(input())
 
-if m >= 60:
-    h += m // 60
-    m = m % 60
+def find(A):
+    if parent[A] != A:
+        parent[A] = find(parent[A])
+    return parent[A]
 
-if h >= 24:
-    h -= 24
 
-print(h, m)
+def union(A, B):
+    A, B = find(A), find(B)
+    if A == B:
+        return
+    parent[B] = find(A)
+    count[A] = count[A] + count[B]
+
+
+for _ in range(int(input())):
+    parent = {}
+    count = {}
+    for _ in range(int(input())):
+        A, B = input().split()
+        if A not in parent:
+            parent[A] = A
+            count[A] = 1
+        if B not in parent:
+            parent[B] = B
+            count[B] = 1
+        union(A, B)
+        print(count[find(A)])
