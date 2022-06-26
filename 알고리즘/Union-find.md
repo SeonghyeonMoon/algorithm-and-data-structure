@@ -1,4 +1,6 @@
-# 경로 압축(Path Compression)
+# Union Find
+
+## 경로 압축(Path Compression)
 
 ```py
 def find(v):
@@ -7,7 +9,8 @@ def find(v):
     return parent[v]
 ```
 
-# Union by rank
+## Union by rank
+
 ```py
 def union(a, b):
     a = find(a)
