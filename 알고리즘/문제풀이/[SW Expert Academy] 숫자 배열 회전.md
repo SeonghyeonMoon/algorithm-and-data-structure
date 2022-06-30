@@ -1,8 +1,9 @@
-from math import ceil
-import sys
+# [SW Expert Academy] [숫자 배열 회전](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5Pq-OKAVYDFAUq)
 
-sys.stdin = open("input.txt", "r")
-input = sys.stdin.readline
+따로 공간을 할당하지 않고 해결하고 싶어서 4개의 포인터를 잡아 회전시키는 방법을 사용하였다.
+
+```py
+from math import ceil
 
 T = int(input())
 for test_case in range(1, T + 1):
@@ -28,10 +29,11 @@ for test_case in range(1, T + 1):
                     procession[x4][y4],
                     procession[x1][y1],
                 )
-                
+
         for i in range(N):
             answer[i].append(''.join(map(str, procession[i])))
-    
+
     print(f'#{test_case}')
     for row in answer:
         print(' '.join(row))
+```
