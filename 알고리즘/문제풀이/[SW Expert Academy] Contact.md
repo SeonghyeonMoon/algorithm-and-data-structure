@@ -1,8 +1,7 @@
-import sys
-from collections import defaultdict
+# [SW Expert Academy] [Contact](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV15B1cKAKwCFAYD)
 
-sys.stdin = open("input.txt", "r")
-input = sys.stdin.readline
+```py
+from collections import defaultdict
 
 for test_case in range(1, 11):
     length, start_number = map(int, input().split())
@@ -23,3 +22,4 @@ for test_case in range(1, 11):
                     visited.add(next_node)
         queue = sorted(list(temp_set))
     print(f'#{test_case} {answer}')
+```
