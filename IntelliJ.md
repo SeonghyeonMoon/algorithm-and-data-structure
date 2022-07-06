@@ -19,6 +19,9 @@
 2. **Ctrl + Shift + Enter - Code Completion**
 3. Alt + Shift + Up/Down - Move Line Up/Down
 4. Shift + F6 - Rename
+5. Alt + Insert - Generator
+6. Alt + Enter - Import
+7. Alt + J - Select same word
 
 ### Navigate
 
