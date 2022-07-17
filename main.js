@@ -1,41 +1,30 @@
-import { count, counter } from './counter';
-counter()
-console.log(count)
+const fs = require('fs');
+const EventEmitter = require('events');
 
-console.clear();
+const emitter = new EventEmitter();
+const inputData = fs.readFileSync('input.txt', 'utf-8').split('\n');
 
-console.time('for loop');
-for (let i = 0; i < 10; i++) {
-	console.log(i);
-}
-console.timeEnd('for loop');
+let lineIndex = 0;
+let line;
 
-console.log(global);
+emitter.on('input', () => {
+	line = inputData[lineIndex++];
+})
 
-console.log(1); // 개발
-console.info(1); // 정보
-console.warn(1); // 경보
-console.error(1); // 에러
-
-console.assert(2 === 3, 'not same!');
-
-const student = { name: 'Moon', age: 29 };
-console.log(student);
-console.table(student);
-console.dir(student, { showHidden: true, colors: false, depth: 0 });
-
-function a() {
-	console.count('a function');
-	// console.trace();
+function input() {
+	emitter.emit('input');
+	return line
 }
 
-a();
-a();
-console.countReset('a function');
-a();
-a();
+n = parseInt(input())
+
+console.log(n);
 
 
-console.log(this);
-console.log(this === module.exports)
+maze = []
+for (let i = 0; i < n; i++) {
+	maze.push(input().split(''));
+}
+console.log(maze);
+
 

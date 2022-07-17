@@ -9,7 +9,7 @@
 ## 접근 제어자
 
 private
-x(default) - same package onle
+x(default) - same package only
 protected - same package or inheritance
 public - everywhere
 
