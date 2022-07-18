@@ -6,33 +6,15 @@ const input = (() => {
 	return () => stdin[line++];
 })();
 
-const T = parseInt(input());
+const [N, M] = input().split(' ').map(Number);
 
-for (let testCase = 1; testCase < T + 1; testCase++) {
-	console.log(`#${testCase} ${solution()}`);
+const marbles = Array(N).fill(null).map(() => Array(N).fill(Infinity));
+
+for (let i = 0; i < M; i++) {
+	const [marble1, marble2] = input().split(' ').map(Number);
+	console.log(marble1, marble2);
+	marbles[marble1 - 1][marble2 - 1] = 1;
+	marbles[marble2 - 1][marble1 - 1] = -1;
 }
 
-function solution() {
-	const [N, M] = input().split(' ').map(Number);
-	const flies = [new Array(N + 1).fill(0)]
-	for (let x = 0; x < N; x++) {
-		flies.push([0].concat(input().split(' ').map(Number)));
-	}
-	for (let x = 1; x < N + 1; x++) {
-		for (let y = 1; y < N + 1; y++) {
-			flies[x][y] += flies[x - 1][y] + flies[x][y - 1] - flies[x - 1][y - 1];
-		}
-	}
-	let answer = 0;
-	for (let x = M; x < N + 1; x++) {
-		for (let y = M; y < N + 1 ; y++) {
-			const sum = flies[x][y] - flies[x - M][y] - flies[x][y - M] + flies[x - M][y - M]
-			if (answer < sum) {
-				answer = sum
-			}
-		}
-	}
-	console.table(flies)
-	return answer;
-}
-
+console.log(marbles);

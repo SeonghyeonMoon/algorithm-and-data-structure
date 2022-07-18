@@ -1,5 +1,11 @@
 # [SW Expert Academy] [파리 퇴치](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PzOCKAigDFAUq)
 
+## 문제
+
+2차원 배열의 합을 계산하는 문제
+단순히 2중 반복문을 통해서 풀이하면 O(N^2)의 시간 복잡도로 풀이 가능하지만
+2차원 누적합으로 변환하여 연산하면 O(N)의 시간 복잡도로 풀이 가능하다.
+
 ## Python
 
 ```py
