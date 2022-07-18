@@ -1,6 +1,6 @@
 # [SW Expert Academy] [파리 퇴치](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PzOCKAigDFAUq)
 
-2차원 누적합
+## Python
 
 ```py
 T = int(input())
@@ -21,6 +21,8 @@ for test_case in range(1, T + 1):
 
     print(f'#{test_case} {answer}')
 ```
+
+## Javascript
 
 ```js
 const fs = require('fs');
