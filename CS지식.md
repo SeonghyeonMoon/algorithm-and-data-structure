@@ -11,26 +11,12 @@ var의 경우 호이스팅시 undefined로 변수를 초기화한다.
 
 도메인 네임을 입력하면 DNS 서버에서 해당 IP를 찾아 요청을 하고, HTTP와 TCP를 통해 해당 웹 서버에서 자원을 사용자에게 전송해줍니다. 해당 자원을 DOM, CSSOM 등으로 파싱하여 렌더 트리를 생성하고 화면에 보여줍니다. 후에 Javascript가 렌더 트리에 영향을 주면 리플로팅 및 리페인팅 과정을 통해 화면을 재구성합니다.
 
-## GET, POST의 차이점
-
-기본적으로 GET은 자원의 요청, POST는 자원의 생성에 사용되는 메소드이고,
-그 외의 차이점으로 캐시, 브라우저 히스토리, 북마크, 길이 제한의 유무등을 볼 수 있다.
-
 ## 객체지향 프로그래밍
 
 프로그래밍 패러다임 중 하나로, 프로그래밍에서 필요한 데이터를 추상화시켜 상태와 행위를 가진 객체를 만들고, 그 객체들 간의 유기적인 상호작용을 통해 로직을 구성하는 프로그래밍 방법이다.
 
 장점 - 코드 재사용, 유지 보수성, 대형 프로젝트
 단점 - 상대적으로 느린 속도, 객체가 많다면 용량이 커진다, 설계 시 많은 시간과 노력
-
-
-- feat 		: 새로운 기능 추가
-- fix 		: 버그 수정
-- docs 		: 문서 수정
-- style 	: 코드 formatting, 세미콜론(;) 누락, 코드 변경이 없는 경우
-- refactor 	: 코드 리팩토링
-- test 		: 테스트 코드, 리팽토링 테스트 코드 추가
-- chore 	: 빌드 업무 수정, 패키지 매니저 수정
 
 ### 추상화
 
@@ -42,22 +28,6 @@ var의 경우 호이스팅시 undefined로 변수를 초기화한다.
 클래스 - 추상화를 통해 정의한 것
 인스턴스 - 클래스에서 정의한 것을 토대로 실제 메모리에 할당한 것
 
-### 캡슐화
-
-### 상속
-
-부모 클래스의 속성과 기능을 그대로 이어받아 사용할 수 있고, 일부분을 변경해서 사용할 수 있게 하는 것
-
-
-## 제어 컴포넌트, 비제어 컴포넌트
-
-## this 
- 언제나 상위 스코프의 this
-
-## 쿠키, 세션, JWT
-
-사용자 인증에 대한 정보를 유지한다.
-
 ## JWT
 
 Header, Payload, Signature
@@ -67,7 +37,7 @@ Header, Payload, Signature
 typ 토큰의 타입
 alg 알고리즘 방식
 
-## 클로저 
+## 클로저
 
 클로저는 반환된 내부함수가 자신이 선언됐을 때의 환경(Lexical environment)인 스코프를 기억하여 자신이 선언됐을 때의 환경(스코프) 밖에서 호출되어도 그 환경(스코프)에 접근할 수 있는 함수
 
@@ -82,7 +52,6 @@ render
 didMount/update
 unmount
 
-
 ## RESTAPI 정의
 
 Representational State Transfer
@@ -92,21 +61,11 @@ Representational State Transfer
 
 브라우저의 주요 기능은 사용자가 선택한 자원을 서버에 요청하고 브라우저에 표시하는 것. 자원은 HTML문서지만 PDF나 이미지같은 형태일 수 있다.
 
-## Https
-HyperText Transfer Protocol Secure의 Http에 보안을 추가함으로서 데이터의 무결성과 기밀성을 유지해주는 프로토콜
+## 용어 정리
 
-11. CloudFront란
-    엣지 로케이션,
+1. MVC - Model(Data 관련), View(시각화), Controller(M V 연결, 전반적 제어)
 
-가상돔 원리
-
-데이터가 변했을 때 가상돔에 변화를 반영하고, 변화 전 가상돔과 비교 후 바뀐 부분만 실제 돔에 적용한다.
-
-# 용어 정리
-
-4. MVC - Model(Data 관련), View(시각화), Controller(M V 연결, 전반적 제어)
-
-5. ASCII - American Standard Code for Information Interchange 최초의 표준 문자열 인코딩 방식
+2. ASCII - American Standard Code for Information Interchange 최초의 표준 문자열 인코딩 방식
 
 ## React Query
 
@@ -126,7 +85,6 @@ provider로 감싼 모든 자식 컴포넌트들이 리렌더링되는 문제점
 
 HTTP Live Streaming
 파일 조각을 나누고 http 통신으로 전송하는 방식
-
 
 ## Semantic Tag 사용 이유
 
@@ -155,3 +113,19 @@ Monolithic Architecture란 SW의 모든 구성요소가 한 프로젝트에 통�
 
 쓰로틀링 - 마지막 함수가 호출된 후 일정 시간이 지나기 전에 다시 호출되지 않도록 하는 것
 디바운싱 - 연이어 호출되는 함수들 중 마지막 함수(또는 제일 처음)만 호출하도록 하는 것
+
+## Git
+
+fetch
+pull = fetch + merge
+clone = pull + remote add
+
+### commit convention
+
+- feat : 새로운 기능 추가
+- fix : 버그 수정
+- docs : 문서 수정
+- style : 코드 formatting, 세미콜론(;) 누락, 코드 변경이 없는 경우
+- refactor : 코드 리팩토링
+- test : 테스트 코드, 리팩토링 테스트 코드 추가
+- chore : 빌드 업무 수정, 패키지 매니저 수정
