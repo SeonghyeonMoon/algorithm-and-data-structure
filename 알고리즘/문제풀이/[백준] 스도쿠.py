@@ -15,7 +15,7 @@ for x in range(9):
 def bt(n):
     if n == len(blank):
         for row in sudoku:
-            print(''.join(map(str, row)))
+            print(*row, sep='')
         sys.exit()
     x, y = blank[n]
     s = [i for i in range(1, 10)]
