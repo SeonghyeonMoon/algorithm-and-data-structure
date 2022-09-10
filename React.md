@@ -14,19 +14,6 @@
 
 6. Props = Properties의 약자
 
-## useEffect
-
-렌더링 발생할 때마다 실행하고 싶지 않을 때
-
-```js
-useEffect(() => {
-  console.log('effect'); // 마운트, 업데이트 시 실행
-  return () => {
-    console.log('cleanup'); // 업데이트, 언마운트 직전 실행
-  };
-}, []); // 배열 안 값이 업데이트 될때만 실행)
-```
-
 ## 성능 최적화
 
 1. 컴포넌트가 리렌더링 되는 것은 내부에 선언된 표현식도 매번 다시 선언되어 사용된다.
@@ -39,18 +26,6 @@ useEffect(() => {
 
 ```js
 const avg = useMemo(() => getAverage(list), [list]); // list가 변경될 때만 리렌더링
-```
-
-### useCallback
-
-useMemo의 함수버전
-
-### React.memo
-
-props가 변경되었을 때만 컴포넌트 리렌더링
-
-```js
-export default React.memo(컴포넌트명); // props가 변경될 때만 리렌더링
 ```
 
 ## useReducer
@@ -79,24 +54,3 @@ const eventName = () => {
   })
 }
 ```
-
-## useState
-
-setState는 비동기로 작동해서 예상과 다르게 작동할 때가 있다. 그럴 때 두번 째 인수로 callback함수를 받아 setState가 끝나고 실행시킬 수 있었다.
-그러나 hook에서는 그 기능이 사라졌고, 공식문서에 따르면 setState가 끝나고 실행하려면 useEffect를 사용하기를 권장한다고 적혀있다.
-
-또한 연속적으로 setState를 실행하려면 update 함수가 필요하다.
-
-```js
-setState(state + 1);
-setState(state + 1);
-// (X)
-
-setState(prevState => prevState + 1);
-setState(prevState => prevState + 1);
-// (O)
-```
-
-## 적용해 볼 것
-
-1. 배열 추가할 때 spread 연산자 대신 concat 사용해보기
