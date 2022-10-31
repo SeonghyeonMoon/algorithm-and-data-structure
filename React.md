@@ -54,3 +54,28 @@ const eventName = () => {
   })
 }
 ```
+
+## 리액트 커링 활용해서 handler 간단하게 등록하게
+
+```tsx
+import { MouseEvent } from 'react';
+
+const data = [{ id: 1, content: '1' }, { id: 2, content: '2' }, { id: 3, content: '3' }]
+
+function Currying() {
+  const handleClick = (content: string) => (e: MouseEvent<HTMLLIElement>) => {
+    console.log(e, content);
+  }
+  return (
+    <ul>
+      {
+        data.map(({ id, content }) =>
+          <li key={id} onClick={handleClick(content)}>{content}</li>
+        )
+      }
+    </ul>
+  )
+}
+
+export default Currying
+```
