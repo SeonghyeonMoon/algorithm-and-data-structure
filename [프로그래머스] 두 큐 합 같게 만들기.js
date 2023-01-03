@@ -1,0 +1,32 @@
+const sum = (arr) => arr.reduce((result, number) => result + number, 0);
+
+const solution = (queue1, queue2) => {
+  let queue1Sum = sum(queue1);
+  const queue2Sum = sum(queue2);
+  const goalSum = (queue1Sum + queue2Sum) / 2;
+
+  let result = 0;
+  let left = 0;
+  let right = queue1.length - 1;
+  const totalQueue = queue1.concat(queue2);
+
+  const totalQueueLength = totalQueue.length;
+  for (let i = 0; i < totalQueueLength * 2; i++) {
+    if (queue1Sum === goalSum) {
+      return result;
+    }
+
+    if (queue1Sum < goalSum) {
+      right = (right + 1) % totalQueueLength;
+      queue1Sum += totalQueue[right];
+    } else if (queue1Sum > goalSum) {
+      queue1Sum -= totalQueue[left];
+      left = (left + 1) % totalQueueLength;
+    }
+
+    result += 1;
+  }
+  return -1;
+};
+
+console.log(solution([1, 2, 1, 2], [1, 10, 1, 2]));
