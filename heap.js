@@ -17,9 +17,7 @@ class MinHeap {
   }
 
   pop() {
-    if (this.heap.length <= 1) {
-      return this.heap.pop();
-    }
+    if (this.heap.length <= 1) return this.heap.pop();
     const result = this.heap[0];
     this.heap[0] = this.heap.pop();
     this.bubbleDown(0);
@@ -30,12 +28,8 @@ class MinHeap {
     const leftIndex = index * 2 + 1;
     const rightIndex = index * 2 + 2;
     let minIndex = index;
-    if (this.heap[leftIndex] < this.heap[minIndex]) {
-      minIndex = leftIndex;
-    }
-    if (this.heap[rightIndex] < this.heap[minIndex]) {
-      minIndex = rightIndex;
-    }
+    if (this.heap[leftIndex] < this.heap[minIndex]) minIndex = leftIndex;
+    if (this.heap[rightIndex] < this.heap[minIndex]) minIndex = rightIndex;
     if (minIndex !== index) {
       this.swap(minIndex, index);
       this.bubbleDown(minIndex);
