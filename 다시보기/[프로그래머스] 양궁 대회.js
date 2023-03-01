@@ -1,0 +1,34 @@
+const solution = (n, info) => {
+    let result;
+    let temp = Array(11).fill(0);
+    let max = 0;
+
+    const dfs = (idx, diff, remainArrowNumber) => {
+        if (remainArrowNumber === 0 || idx === -1) {
+            if (diff > 0 && diff > max) {
+                temp[10] += remainArrowNumber
+                max = diff
+                result = [...temp]
+            }
+            return
+        }
+
+        if (info[idx] === 0) {
+            temp[idx] = 1
+            dfs(idx - 1, diff + 10 - idx, remainArrowNumber - 1)
+        }
+
+        if (info[idx] > 0 && remainArrowNumber > info[idx]) {
+            temp[idx] = info[idx] + 1
+            dfs(idx - 1, diff + (10 - idx) * 2, remainArrowNumber - info[idx] - 1)
+        }
+
+        temp[idx] = 0
+        dfs(idx - 1, diff, remainArrowNumber)
+    }
+
+    const point = info.reduce((acc, cur, idx) => acc + (10 - idx) * !!cur, 0);
+    dfs(10, -point, n);
+
+    return max > 0 ? result : [-1];
+}
