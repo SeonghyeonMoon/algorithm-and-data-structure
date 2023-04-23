@@ -1,6 +1,10 @@
-[Leetcode] [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
+// [Leetcode] [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
 
-```js
+// 분류
+// - Linked List
+
+// 풀이
+
 class ListNode {
   constructor(val, next) {
     this.val = val === undefined ? 0 : val;
@@ -21,8 +25,7 @@ const mergeTwoLists = (list1, list2) => {
     }
     current = current.next;
   }
-  // 문제 저장 이유
+  // 문제 저장 이유(Merge Sort에도 활용 가능)
   current.next = list1 || list2;
   return result.next;
 };
-```
